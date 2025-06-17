@@ -133,50 +133,6 @@ func (x *CreateCategoryRequest) GetDescription() string {
 	return ""
 }
 
-type CategoryResponse struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	Category      *Category              `protobuf:"bytes,1,opt,name=category,proto3" json:"category,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
-}
-
-func (x *CategoryResponse) Reset() {
-	*x = CategoryResponse{}
-	mi := &file_proto_course_category_proto_msgTypes[2]
-	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-	ms.StoreMessageInfo(mi)
-}
-
-func (x *CategoryResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*CategoryResponse) ProtoMessage() {}
-
-func (x *CategoryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_proto_course_category_proto_msgTypes[2]
-	if x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use CategoryResponse.ProtoReflect.Descriptor instead.
-func (*CategoryResponse) Descriptor() ([]byte, []int) {
-	return file_proto_course_category_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *CategoryResponse) GetCategory() *Category {
-	if x != nil {
-		return x.Category
-	}
-	return nil
-}
-
 var File_proto_course_category_proto protoreflect.FileDescriptor
 
 const file_proto_course_category_proto_rawDesc = "" +
@@ -188,11 +144,9 @@ const file_proto_course_category_proto_rawDesc = "" +
 	"\vdescription\x18\x03 \x01(\tR\vdescription\"M\n" +
 	"\x15CreateCategoryRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12 \n" +
-	"\vdescription\x18\x02 \x01(\tR\vdescription\"<\n" +
-	"\x10CategoryResponse\x12(\n" +
-	"\bcategory\x18\x01 \x01(\v2\f.pb.CategoryR\bcategory2V\n" +
-	"\x0fCategoryService\x12C\n" +
-	"\x0eCreateCategory\x12\x19.pb.CreateCategoryRequest\x1a\x14.pb.CategoryResponse\"\x00B\rZ\vinternal/pbb\x06proto3"
+	"\vdescription\x18\x02 \x01(\tR\vdescription2N\n" +
+	"\x0fCategoryService\x12;\n" +
+	"\x0eCreateCategory\x12\x19.pb.CreateCategoryRequest\x1a\f.pb.Category\"\x00B\rZ\vinternal/pbb\x06proto3"
 
 var (
 	file_proto_course_category_proto_rawDescOnce sync.Once
@@ -206,21 +160,19 @@ func file_proto_course_category_proto_rawDescGZIP() []byte {
 	return file_proto_course_category_proto_rawDescData
 }
 
-var file_proto_course_category_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
+var file_proto_course_category_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
 var file_proto_course_category_proto_goTypes = []any{
 	(*Category)(nil),              // 0: pb.Category
 	(*CreateCategoryRequest)(nil), // 1: pb.CreateCategoryRequest
-	(*CategoryResponse)(nil),      // 2: pb.CategoryResponse
 }
 var file_proto_course_category_proto_depIdxs = []int32{
-	0, // 0: pb.CategoryResponse.category:type_name -> pb.Category
-	1, // 1: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryRequest
-	2, // 2: pb.CategoryService.CreateCategory:output_type -> pb.CategoryResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 0: pb.CategoryService.CreateCategory:input_type -> pb.CreateCategoryRequest
+	0, // 1: pb.CategoryService.CreateCategory:output_type -> pb.Category
+	1, // [1:2] is the sub-list for method output_type
+	0, // [0:1] is the sub-list for method input_type
+	0, // [0:0] is the sub-list for extension type_name
+	0, // [0:0] is the sub-list for extension extendee
+	0, // [0:0] is the sub-list for field type_name
 }
 
 func init() { file_proto_course_category_proto_init() }
@@ -234,7 +186,7 @@ func file_proto_course_category_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_course_category_proto_rawDesc), len(file_proto_course_category_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   3,
+			NumMessages:   2,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
