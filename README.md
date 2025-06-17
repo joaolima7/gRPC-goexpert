@@ -19,3 +19,12 @@ go install google.golang.org/protobuf/cmd/protoc-gen-go@latest
 go install google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 ```
 Esses comandos instalarão os plugins necessários para gerar código Go a partir dos arquivos `.proto`.
+
+
+## Passo 3: Gerar Código Go a partir dos Arquivos `.proto`
+Para gerar o código Go a partir dos arquivos `.proto`, você deve usar o comando `protoc` com os plugins instalados. Por exemplo, se você tiver um arquivo chamado `course_category.proto`, execute o seguinte comando:
+
+```bash
+protoc --go_out=. --go-grpc_out=. proto/course_category.proto
+```
+Esse comando irá gerar os arquivos Go necessários para o serviço gRPC definido no arquivo `.proto`. O parâmetro `--go_out=.` especifica o diretório de saída para os arquivos gerados, enquanto `--go-grpc_out=.` indica que você também deseja gerar o código específico do gRPC.
